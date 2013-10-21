@@ -1,0 +1,12 @@
+<h2>Welcome to my Django forums</h2>
+{% if output %}
+	<h4>Subjects</h4>
+	<ul>
+	{% for forum in output %}
+		<li><a href="/forum/{{ forum.id }}/">{{ forum.title }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<h4>Woops!</h4>
+	<p>It seems there aren't any forums available or the database is currently not available</br>Maybe you could try again at a later time</p>
+{% endif %}

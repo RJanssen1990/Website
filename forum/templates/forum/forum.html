@@ -1,0 +1,12 @@
+{% if forum and list_of_threads %}
+	<h2>{{ forum.title }}</h2>
+	<ul>
+	{% for thread in list_of_threads %}
+		<li><a href="/forum/{{ forum.id }}/thread/{{ thread.id }}/">{{ thread.title }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<h4>Woops!</h4>
+	<p>It seems there aren't any threads available in this forum or the database is currently not available.</br>Maybe you could try again at a later time</p>
+{% endif %}
+<a href="/forum/">Click here to return to the homepage</a>
